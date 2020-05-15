@@ -17,7 +17,7 @@ const Search = (history) => {
             <form className="form-inline search-groupping-style">
                 <div className="input-group mr-2">
                     <div className="input-group-append">
-                        <span className="input-group-text append-logo-style"><i class="fas fa-search"></i></span>
+                        <span className="input-group-text append-logo-style"><i className="fas fa-search"></i></span>
                     </div>
                     <input 
                         value={searchValue}

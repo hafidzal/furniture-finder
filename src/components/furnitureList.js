@@ -1,36 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import Card from './common/card';
 
 const FurnitureList = (props) => {
-    // const url = `https://api.github.com/users/${props.userName}/repos`;
-    // const [projectList, setProjectList] = useState([]);
-    // const [isLoading, setIsLoading] = useState(true);
+    const url = `http://www.mocky.io/v2/5c9105cb330000112b649af8`;
+    const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(() => {
-    //     fetch(
-    //         url, {
-    //             method: "GET"
-    //         }
-    //     )
-    //     .then(
-    //         res => res.json()
-    //     )
-    //     .then(
-    //         response => {
-    //             setProjectList(response);
-    //             setIsLoading(false);
-    //         }
-    //     )
-    //     .catch( err => console.log('error: ', err))
-    // }, [])
-
-    // const clickProject = (id) => {
-    //     // console.log('clicked: ', index);
-    //     props.history.push({
-    //         pathname:`/${props.userName}/${id.name}`,
-    //         state: { detail: id }
-    //     });
-    // }
+    useEffect(() => {
+        fetch(
+            url, {
+                method: "GET"
+            }
+        )
+        .then(
+            res => res.json()
+        )
+        .then(
+            response => {
+                setProducts(response.products);
+                setIsLoading(false);
+            }
+        )
+        .catch( err => console.log('error: ', err))
+    }, [])
 
     return(
         <>
@@ -41,20 +34,11 @@ const FurnitureList = (props) => {
                     </div>
                 </div>
             } */}
-            <ul className="list-group list-style">
-                <li>Barang 1</li>
-                <li>Barang 2</li>
-            {/* {
-                projectList.map((project, index) => (
-                    <li key={index} 
-                        onClick={() => clickProject(project)}
-                        className="list-group-item mt-3 repolist-style">
-                            <h5 className="mt-2">{project.name}</h5>
-                            <p className="created-at-style">Created at : {moment(project.created_at).format('MMMM Do YYYY')}</p>
-                    </li>
+            {   
+                products.map((productInfo, index) => (
+                    <Card products={productInfo}/>
                 ))
-            } */}
-            </ul>
+            }
         </>
     );
 }
