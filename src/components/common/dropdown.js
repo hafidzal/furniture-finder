@@ -41,20 +41,16 @@ const Dropdown = ({basedOn}) => {
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     {   
                         filter.map((filterApplied, index) => (
-                                    <a className="dropdown-item" href={`/${filterApplied}`}>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id={filterApplied} />
-                                            <label class="custom-control-label" for={filterApplied}>
+                                    <a className="dropdown-item" href={`/${filterApplied}`} key={index}>
+                                        <div className="custom-control custom-checkbox">
+                                            <input type="checkbox" className="custom-control-input" id={filterApplied} />
+                                            <label className="custom-control-label" htmlFor={filterApplied}>
                                                 {filterApplied}
                                             </label>
                                         </div>
                                     </a>
                             ))
                     }
-                    {/* <hr /> */}
-                    {/* <button className="btn btn-apply-filter" type="button">
-                        Apply Filter
-                    </button> */}
                 </div>
             </div>
         </div>

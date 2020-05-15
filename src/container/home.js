@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from '../components/navbar';
 import Dropdown from '../components/common/dropdown';
 import FurnitureList from '../components/furnitureList';
-// import PokemonList from '../components/home/pokemon-list';
 
 class Home extends Component {
     render() {

@@ -44,16 +44,16 @@ const FurnitureList = (props) => {
 
     return(
         <>
-            {/* { isLoading && 
-                <div className="d-flex justify-content-center">
-                    <div className="spinner-border text-light" role="status">
+            { isLoading && 
+                <div className="text-center">
+                    <div className="spinner-border text-secondary"  style={{width: '5rem', height: '5rem', margin: '10rem 0 10rem 40rem'}} role="status">
                         <span className="sr-only">Loading...</span>
                     </div>
                 </div>
-            } */}
+            }
             {   
                 products.map((productInfo, index) => (
-                    <Card products={productInfo}/>
+                    <Card products={productInfo} key={index}/>
                 ))
             }
         </>

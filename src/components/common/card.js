@@ -22,7 +22,7 @@ const Card = ({products}) => {
                             
                             {   
                                 products.furniture_style.map((style, index) => (
-                                    <p className="card-text card-furniture-style">{style} </p>
+                                    <p className="card-text card-furniture-style" key={index}>{style} </p>
                                 ))
                             }
                             <p className="card-text text-right">{products.delivery_time} days</p>
