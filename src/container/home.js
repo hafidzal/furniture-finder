@@ -11,6 +11,7 @@ class Home extends Component {
                 <div className="container-fluid">
                     <div className="row no-gutter">
                         <div className="col-sm">
+                            <div className="upper" style={{ backgroundColor: '#ac3b61', height: '0.3rem' }}></div>
                             <Navbar />
                         </div>
                     </div>
@@ -23,9 +24,13 @@ class Home extends Component {
                         </div>
                     </div>
                     <div className="row ml-4">
-                        {/* <div className="col-sm"> */}
                             <FurnitureList />
-                        {/* </div> */}
+                    </div>
+                    <div className="row no-gutter">
+                        <div className="col-sm">
+                            <div className="lower-footer" style={{ backgroundColor: '#eee2dc', height: '3rem' }}></div>
+                            <div className="lower-footer" style={{ backgroundColor: '#e6d4cb', height: '0.5rem' }}></div>
+                        </div>
                     </div>
                 </div>
             </div>
