@@ -102,6 +102,13 @@ li{
   width: 20rem !important;
 }
 
+.btn-apply-filter{
+  background-color: #ac3b61 !important;
+  color: #ffffff !important;
+  width: 10rem !important;
+  margin: 0 0 0 5rem;
+}
+
 .dropdown-menu{
   width: 20rem !important;
   /* height: 400px !important; */

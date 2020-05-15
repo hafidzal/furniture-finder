@@ -12,7 +12,7 @@ class Home extends Component {
                     <div className="row no-gutter">
                         <div className="col-sm">
                             <div className="upper" style={{ backgroundColor: '#ac3b61', height: '0.3rem' }}></div>
-                            <Navbar />
+                            <Navbar history={this.props.history}/>
                         </div>
                     </div>
                     <div className="row no-gutter">
@@ -24,7 +24,7 @@ class Home extends Component {
                         </div>
                     </div>
                     <div className="row ml-4">
-                            <FurnitureList />
+                        {typeof this.props.match.params.searchQuery === 'undefined' ? <FurnitureList /> : <FurnitureList search={this.props.match.params.searchQuery}/>}
                     </div>
                     <div className="row no-gutter">
                         <div className="col-sm">

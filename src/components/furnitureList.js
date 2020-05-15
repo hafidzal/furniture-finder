@@ -18,8 +18,25 @@ const FurnitureList = (props) => {
         )
         .then(
             response => {
-                setProducts(response.products);
-                setIsLoading(false);
+                if (Object.keys(props).length === 0) {
+                    setProducts(response.products);
+                    setIsLoading(false);
+                } else {
+                    // setProducts('failed');
+                    let searchApplied = response.products.filter(product => {
+                        const searchTerm = props.search.toLowerCase();
+                        const basedOnName = product.name.toLowerCase();
+                        const basedOnDesc = product.description.toLowerCase();
+                        const basedOnStyle = product.furniture_style.map(style => style.toLowerCase());
+
+                        // console.log('base on style', basedOnStyle);
+
+                        return basedOnName.includes(searchTerm) | basedOnDesc.includes(searchTerm) | basedOnStyle.includes(searchTerm);
+                    })
+
+                    setProducts(searchApplied);
+                    setIsLoading(false);
+                }
             }
         )
         .catch( err => console.log('error: ', err))
